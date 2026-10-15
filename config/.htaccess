@@ -1,0 +1,2 @@
+# Never serve config over HTTP (secrets, env loader)
+Require all denied

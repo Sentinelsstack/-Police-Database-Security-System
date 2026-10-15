@@ -1,0 +1,30 @@
+# Deny access to sensitive files
+<FilesMatch "^(db\.php|env\.php|config\.php|\.env|\.env\..*)$">
+  Require all denied
+</FilesMatch>
+
+# Never serve SQL dumps or schema over HTTP
+<FilesMatch "\.sql$">
+  Require all denied
+</FilesMatch>
+
+ErrorDocument 403 /finalyearproject/Joshua/police_db/403.php
+ErrorDocument 404 /finalyearproject/Joshua/police_db/404.php
+
+<IfModule mod_php.c>
+  php_flag display_errors off
+</IfModule>
+
+# Uploads dir protection lives in uploads/.htaccess (no PHP execution there).
+# NOTE: <Directory> blocks are not allowed in .htaccess - keep them in httpd-vhosts.conf.
+
+# Security headers (requires mod_headers; PHP also sends them + CSP/HSTS in header.php)
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  Header always set X-Permitted-Cross-Domain-Policies "none"
+</IfModule>
+
+Options -Indexes

@@ -1,0 +1,2 @@
+# Never serve docs over HTTP (CLI tools, runbooks)
+Require all denied

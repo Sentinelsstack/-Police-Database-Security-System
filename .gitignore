@@ -1,0 +1,19 @@
+# Local secrets - never commit
+config/.env
+.police_db.env
+
+# Backups / dumps / logs
+*.sql
+!schema.sql
+backup-*.sql
+backups/
+logs/*.log
+
+# Uploaded evidence photos
+uploads/suspects/*
+!uploads/suspects/.gitkeep
+
+# OS / editor
+Thumbs.db
+.DS_Store
+*.log
