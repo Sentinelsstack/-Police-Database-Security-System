@@ -1,6 +1,6 @@
 # Police Database Security System
 
-A secure, role-based police records management system built as a final-year project (Igboke Joshua, UNIZIK — Computer Science). It manages crimes, suspects, victims, cases, evidence, and officers with an emphasis on **data protection, accountability, and OWASP Top 10 (2021) hardening**.
+A secure, role-based police records management system built as a final-year project UNIZIK Computer Science. It manages crimes, suspects, victims, cases, evidence, and officers with an emphasis on **data protection, accountability, and OWASP Top 10 (2021) hardening**.
 
 **Stack:** PHP 8.2 (OOP + PDO) · Bootstrap 5.3 · MariaDB 10.4 (XAMPP) · No framework, no Composer
 **Methodology:** OOADM · **Accessibility:** WCAG 2.1 AA target
